@@ -1,0 +1,362 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:58:"themes/admin_tpl/admin\theme\file_var_setting.html";i:1515696438;s:51:"themes/admin_tpl/admin\theme\functions.html";i:1515696438;s:43:"themes/admin_tpl/public\header.html";i:1515696438;s:49:"themes/admin_tpl/admin\theme\scripts.html";i:1515696438;}*/ ?>
+<?php 
+    function _parse_vars($vars,$inputName,$level=1,$widget=''){
+
+ if(is_array($vars) || $vars instanceof \think\Collection || $vars instanceof \think\Paginator): if( count($vars)==0 ) : echo "" ;else: foreach($vars as $varName=>$var): ?>
+    <fieldset>
+        <div class="form-group">
+            <?php if(isset($var['title'])): ?>
+                <label class="control-label">
+                    <?php echo $var['title']; if(!(empty($var['rule']['require']) || (($var['rule']['require'] instanceof \think\Collection || $var['rule']['require'] instanceof \think\Paginator ) && $var['rule']['require']->isEmpty()))): ?>
+                        <span class="form-required">*</span>
+                    <?php endif; ?>
+                </label>
+            <?php endif; switch($var['type']): case "text": ?>
+                    <div class="controls">
+                        <?php if(isset($var['dataSource'])): ?>
+                            <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>_text_]" class="form-control"
+                                   onclick="doSelectData(this)"
+                                   data-source="<?php echo base64_encode(json_encode($var['dataSource'])); ?>"
+                                   data-title="请选择<?php echo $var['title']; ?>"
+                                   value="<?php echo (isset($vars[$varName]['valueText']) && ($vars[$varName]['valueText'] !== '')?$vars[$varName]['valueText']:''); ?>">
+                            <input type="hidden" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                                   value="<?php echo $vars[$varName]['value']; ?>">
+                            <?php else: ?>
+                            <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                                   value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php endif; if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "textarea": ?>
+                    <div class="controls">
+                        <textarea name="<?php echo $inputName; ?>[<?php echo $varName; ?>]"
+                                  class="form-control"><?php echo $vars[$varName]['value']; ?></textarea>
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "date": ?>
+                    <div class="controls">
+                        <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control js-bootstrap-date"
+                               value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "datetime": ?>
+                    <div class="controls">
+                        <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control js-bootstrap-datetime"
+                               value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "image": ?>
+                    <div class="controls">
+                        <input type="hidden" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                               value="<?php echo $vars[$varName]['value']; ?>" id="js-<?php echo $widget; ?><?php echo $varName; ?>-input">
+                        <div>
+                            <a href="javascript:uploadOneImage('图片上传','#js-<?php echo $widget; ?><?php echo $varName; ?>-input');">
+                                <?php if(empty($vars[$varName]['value'])): ?>
+                                    <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                         id="js-<?php echo $widget; ?><?php echo $varName; ?>-input-preview"
+                                         width="135" style="cursor: pointer"/>
+                                    <?php else: ?>
+                                    <img src="<?php echo imf_get_image_preview_url($vars[$varName]['value']); ?>"
+                                         id="js-<?php echo $widget; ?><?php echo $varName; ?>-input-preview"
+                                         width="135" style="cursor: pointer"/>
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "photos": ?>
+                    <div class="controls">
+                        <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                               value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "number": ?>
+                    <div class="controls">
+                        <input type="number" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                               value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "location": ?>
+                    <div class="controls">
+                        <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>_text_]" class="form-control"
+                               onclick="doSelectLocation(this)"
+                               data-title="请选择<?php echo $var['title']; ?>"
+                               value="<?php echo (isset($vars[$varName]['valueText']) && ($vars[$varName]['valueText'] !== '')?$vars[$varName]['valueText']:''); ?>">
+                        <input type="hidden" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                               value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "file": ?>
+                    <div class="controls">
+                        <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                               value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "color": ?>
+                    <div class="controls">
+                        <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control js-color"
+                               value="<?php echo $vars[$varName]['value']; ?>" id="js-color-<?php echo $widget; ?><?php echo $varName; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "array": ?>
+                    <div class="controls">
+                        <?php $arrayValueText=is_array($var['value'])
+                            &&count($var['value'])>0?count($var['value']).'条数据,点击添加更多...':'';
+                         ?>
+                        <textarea class="form-control" placeholder="点击添加数据"
+                                  onclick="doEditArrayData(this)"
+                                  data-var="<?php echo $varName; ?>"
+                                  data-widget="<?php echo $widget; ?>"
+                                  data-title="编辑<?php echo $var['title']; ?>"><?php echo $arrayValueText; ?></textarea>
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "select": ?>
+                    <div class="controls">
+                        <?php 
+                            $value= $vars[$varName]['value'];
+                            $options = $vars[$varName]['options'];
+                         ?>
+                        <select name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control">
+                            <?php if(is_array($options) || $options instanceof \think\Collection || $options instanceof \think\Paginator): if( count($options)==0 ) : echo "" ;else: foreach($options as $optionKey=>$optionItem): $optionSelected=$optionKey==$value?"selected":""; ?>
+                                <option value="<?php echo $optionKey; ?>" <?php echo $optionSelected; ?>><?php echo $optionItem; ?>
+                                </option>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; case "slide": ?>
+                    <div class="controls">
+                        <input type="text" name="<?php echo $inputName; ?>[<?php echo $varName; ?>]" class="form-control"
+                               value="<?php echo $vars[$varName]['value']; ?>">
+                        <?php if(isset($var['tip'])): ?>
+                            <p class="help-block"><?php echo $var['tip']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php break; endswitch; ?>
+        </div>
+    </fieldset>
+<?php endforeach; endif; else: echo "" ;endif; 
+    }
+ ?>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- HTML5 shim for IE8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+
+    <link href="__TMPL__/public/assets/themes/<?php echo imf_get_admin_style(); ?>/bootstrap.min.css" rel="stylesheet">
+    <link href="__TMPL__/public/assets/simpleboot3/css/simplebootadmin.css" rel="stylesheet">
+    <link href="__STATIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        form .input-order {
+            margin-bottom: 0px;
+            padding: 0 2px;
+            width: 42px;
+            font-size: 12px;
+        }
+
+        form .input-order:focus {
+            outline: none;
+        }
+
+        .table-actions {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 0px;
+        }
+
+        .table-list {
+            margin-bottom: 0px;
+        }
+
+        .form-required {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        //全局变量
+        var GV = {
+            ROOT: "__ROOT__/",
+            WEB_ROOT: "__WEB_ROOT__/",
+            JS_ROOT: "static/js/",
+            APP: '<?php echo \think\Request::instance()->module(); ?>'/*当前应用名*/
+        };
+    </script>
+    <script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="__STATIC__/js/wind.js"></script>
+    <script src="__TMPL__/public/assets/js/bootstrap.min.js"></script>
+    <script>
+        Wind.css('artDialog');
+        Wind.css('layer');
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+            $("li.dropdown").hover(function () {
+                $(this).addClass("open");
+            }, function () {
+                $(this).removeClass("open");
+            });
+        });
+    </script>
+    <?php if(APP_DEBUG): ?>
+        <style>
+            #think_page_trace_open {
+                z-index: 9999;
+            }
+        </style>
+    <?php endif; ?>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li>
+            <a href="<?php echo url('theme/fileSetting',['file_id'=>$file_id,'tab'=>'widget']); ?>">
+                组件设置
+            </a>
+        </li>
+        <li class="active">
+            <a href="<?php echo url('theme/fileSetting',['file_id'=>$file_id,'tab'=>'var']); ?>">
+                变量设置
+            </a>
+        </li>
+    </ul>
+    <form method="post" class="js-ajax-form  margin-top-20" action="<?php echo url('theme/settingPost'); ?>">
+        <?php if(!(empty($file['more']['vars']) || (($file['more']['vars'] instanceof \think\Collection || $file['more']['vars'] instanceof \think\Paginator ) && $file['more']['vars']->isEmpty()))): ?>
+            <?php echo _parse_vars($file['more']['vars'],'vars'); else: ?>
+            <div>本页面没有设置任何变量</div>
+        <?php endif; ?>
+        <div class="form-group" style="display:none;">
+            <input type="hidden" name="id" value="<?php echo $file['id']; ?>">
+            <button type="submit" class="btn btn-primary js-ajax-submit" id="submit-btn"><?php echo lang('SAVE'); ?></button>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    Wind.use('colorpicker',function(){
+        $('.js-color').each(function () {
+            var $this=$(this);
+            $this.ColorPicker({
+                livePreview:true,
+                onChange: function(hsb, hex, rgb) {
+                    $this.val('#'+hex);
+                },
+                onBeforeShow: function () {
+                    $(this).ColorPickerSetColor(this.value);
+                }
+            });
+        });
+
+    });
+
+    function doSelectData(obj) {
+        var $obj              = $(obj);
+        var $realInput        = $obj.next();
+        var selectedObjectsId = $realInput.val();
+        var dataSource        = $obj.data('source');
+        var title             = $obj.data('title');
+        parent.openIframeLayer("<?php echo url('theme/dataSource'); ?>?ids=" + selectedObjectsId + '&data_source=' + dataSource, title, {
+            area: ['95%', '90%'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                var iframeWin       = parent.window[layero.find('iframe')[0]['name']];
+                var selectedObjects = iframeWin.confirm();
+                if (selectedObjects.selectedObjectsId.length == 0) {
+                    layer.msg('您没有选择任何数据!');
+                    return;
+                }
+                $realInput.val(selectedObjects.selectedObjectsId.join(','));
+                $obj.val(selectedObjects.selectedObjectsName.join(','));
+                parent.layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+
+    function doEditArrayData(obj) {
+        var $obj   = $(obj);
+        var mVar   = $obj.data('var');
+        var title  = $obj.data('title');
+        var widget = $obj.data('widget');
+        widget     = widget ? '&widget=' + widget : '';
+
+        parent.openIframeLayer(
+            "<?php echo url('theme/fileArrayData'); ?>?tab=<?php echo $tab; ?>&file_id=<?php echo $file_id; ?>&" + 'var=' + mVar + widget,
+            title,
+            {
+                area: ['95%', '90%'],
+                btn: ['确定', '取消'],
+                yes: function (index, layero) {
+                    var iframeWin       = parent.window[layero.find('iframe')[0]['name']];
+                    var result=iframeWin.confirm();
+
+                    if(result){
+                        parent.layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    }
+
+                }
+            }
+        );
+    }
+
+    function doSelectLocation(obj) {
+        var $obj       = $(obj);
+        var title      = $obj.data('title');
+        var $realInput = $obj.next();
+        var location   = $realInput.val();
+
+        parent.openIframeLayer(
+            "<?php echo url('dialog/map'); ?>?location=" + location,
+            title,
+            {
+                area: ['95%', '90%'],
+                btn: ['确定', '取消'],
+                yes: function (index, layero) {
+                    var iframeWin = parent.window[layero.find('iframe')[0]['name']];
+                    var location  = iframeWin.confirm();
+                    $realInput.val(location.lng + ',' + location.lat);
+                    $obj.val(location.address);
+                    parent.layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            }
+        );
+    }
+
+    function confirm() {
+        $('#submit-btn').click();
+    }
+
+</script>
+</body>
+</html>
