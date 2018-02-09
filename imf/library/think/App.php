@@ -173,7 +173,7 @@ class App implements \ArrayAccess
         $this->beginMem = memory_get_usage();
         $this->thinkPath = dirname(dirname(__DIR__)) . '/';
         $this->rootPath = dirname(realpath($this->appPath)) . '/';
-        $this->runtimePath = ($this->config('cache.path') ?: $this->rootPath . 'runtime/');
+        $this->runtimePath = $this->config('cache.path');
         $this->routePath = $this->rootPath . 'route/';
         $this->configPath = $this->rootPath . 'config/';
 
