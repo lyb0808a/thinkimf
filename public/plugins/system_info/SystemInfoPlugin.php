@@ -62,7 +62,7 @@ class SystemInfoPlugin extends Plugin
             lang('PHP_RUN_MODE')          => php_sapi_name(),
             lang('PHP_VERSION')           => phpversion(),
             lang('MYSQL_VERSION')         => $mysql,
-            'ThinkPHP'                    => THINK_VERSION,
+            'ThinkPHP'                    => IMF_CORE_VERSION,
             'ThinkIMF'                    => "{$version} <a href=\"https://www.thinkimf.com\" target=\"_blank\">访问官网</a>",
             lang('UPLOAD_MAX_FILESIZE')   => ini_get('upload_max_filesize'),
             lang('MAX_EXECUTION_TIME')    => ini_get('max_execution_time') . "s",

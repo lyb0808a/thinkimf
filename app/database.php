@@ -15,8 +15,8 @@
  * email:unnnnn@foxmail.com
  */
 
-if(file_exists(CMF_ROOT."data/conf/database.php")){
-    $database=include CMF_ROOT."data/conf/database.php";
+if(file_exists(IMF_ROOT."data/conf/database.php")){
+    $database=include IMF_ROOT."data/conf/database.php";
 }else{
     $database=[];
 }

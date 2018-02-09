@@ -20,29 +20,29 @@
 define("APP_DEBUG", true);
 
 // 定义IMF根目录,可更改此目录
-define('CMF_ROOT', __DIR__ . '/../');
+define('IMF_ROOT', __DIR__ . '/../');
 
 // 定义应用目录
-define('APP_PATH', CMF_ROOT . 'app/');
+define('APP_PATH', IMF_ROOT . 'app/');
 
 // 定义IMF核心包目录
-define('CMF_PATH', CMF_ROOT . 'framework/imf/');
+define('CMF_PATH', IMF_ROOT . 'framework/imf/');
 
 // 定义插件目录
 define('PLUGINS_PATH', __DIR__ . '/plugins/');
 
 // 定义扩展目录
-define('EXTEND_PATH', CMF_ROOT . 'framework/extend/');
-define('VENDOR_PATH', CMF_ROOT . 'framework/vendor/');
+define('EXTEND_PATH', IMF_ROOT . 'framework/extend/');
+define('VENDOR_PATH', IMF_ROOT . 'framework/vendor/');
 
 // 定义应用的运行时目录
-define('RUNTIME_PATH', CMF_ROOT . 'data/runtime/');
+define('RUNTIME_PATH', IMF_ROOT . 'data/runtime/');
 
 // 定义IMF 版本号
 define('THINKCMF_VERSION', '1.6.201801');
 
 // 加载框架基础文件
-require CMF_ROOT . 'framework/thinkphp/base.php';
+require IMF_ROOT . 'framework/thinkphp/base.php';
 
 // 执行应用
 \think\App::run()->send();

@@ -190,11 +190,11 @@ function sp_create_db_config($config)
         }
 
         try {
-            $confDir = CMF_ROOT . 'data/conf/';
+            $confDir = IMF_ROOT . 'data/conf/';
             if (!file_exists($confDir)) {
                 mkdir($confDir, 0777, true);
             }
-            file_put_contents(CMF_ROOT . 'data/conf/database.php', $conf);
+            file_put_contents(IMF_ROOT . 'data/conf/database.php', $conf);
         } catch (\Exception $e) {
 
             return false;

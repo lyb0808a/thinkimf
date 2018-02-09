@@ -14,8 +14,8 @@
  * $Create Time: 2017-9-6 23:36:30 $
  * email:unnnnn@foxmail.com
  */
-if (file_exists(CMF_ROOT . "data/conf/config.php")) {
-    $runtimeConfig = include CMF_ROOT . "data/conf/config.php";
+if (file_exists(IMF_ROOT . "data/conf/config.php")) {
+    $runtimeConfig = include IMF_ROOT . "data/conf/config.php";
 } else {
     $runtimeConfig = [];
 }

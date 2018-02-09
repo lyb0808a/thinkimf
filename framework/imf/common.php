@@ -325,7 +325,7 @@ function imf_set_dynamic_config($data)
         return false;
     }
 
-    $configFile = CMF_ROOT . "data/conf/config.php";
+    $configFile = IMF_ROOT . "data/conf/config.php";
     if (file_exists($configFile)) {
         $configs = include $configFile;
     } else {
@@ -1525,7 +1525,7 @@ function imf_is_installed()
 {
     static $cmfIsInstalled;
     if (empty($cmfIsInstalled)) {
-        $cmfIsInstalled = file_exists(CMF_ROOT . 'data/ok.lock');
+        $cmfIsInstalled = file_exists(IMF_ROOT . 'data/ok.lock');
     }
     return $cmfIsInstalled;
 }

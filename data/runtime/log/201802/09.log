@@ -3365,3 +3365,308 @@
 [ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `ud_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.068872s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `ud_option` [ RunTime:0.069981s ]
 [ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.071764s ]
+---------------------------------------------------------------
+[ 2018-02-09T10:12:14+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] 127.0.0.1:5070/ [运行时间：3.174251s][吞吐率：0.32req/s] [内存消耗：3,748.29kb] [文件加载：83]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run imf\behavior\InitHookBehavior @app_init [ RunTime:0.277839s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\framework\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; rmbUser=true; userName=admin; passWord=123456; cta_auth=f5a4-P-Kup8YwDZ67G92-S-kJtDbYFuTdIeXBw5-P-L-S-1UXWl5T5pp9xZb93y46W3nODDbvc29U4aE7a7WUzHO5YyAQ12c; cta_username=admin; cta_cart=0; Hm_lvt_bfe24d0146fa6543bcf338d5331b13b7=1517536036,1517793764,1517882112,1518058932; Hm_lvt_df1786743b64c572d87dc7f3b081d8f5=1517793757,1517882115,1517966320,1518139877; Hm_lpvt_df1786743b64c572d87dc7f3b081d8f5=1518139877; PHPSESSID=qkuv0b0laqf721d4k8k8d2agl3; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'referer' => 'http://127.0.0.1:5070/user/login/index.html',
+  'dnt' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => '127.0.0.1:5070',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../framework/imf/lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\LangBehavior @app_begin [ RunTime:0.001683s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\HomeLangBehavior @home_init [ RunTime:0.002962s ]
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ D:\phpStudy\WWW\cmf\app\portal\controller\IndexController.php ]
+[ info ] [ VIEW ] themes/default/portal\\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.116751s ] mysql:dbname=imf;host=120.78.150.141;port=3306;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_hook_plugin` [ RunTime:0.077336s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `ud_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.075120s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_option` [ RunTime:0.078154s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.076421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_theme_file` [ RunTime:0.076626s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'portal/article' LIMIT 1 [ RunTime:0.077025s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='portal/Article/index',`file`='portal/article',`name`='文章页',`more`='{\"vars\":{\"hot_articles_category_id\":{\"title\":\"Hot Articles\\u5206\\u7c7bID\",\"name\":\"hot_articles_category_id\",\"value\":\"1\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"hot_articles_category_id\":{\"title\":\"Hot Articles\\u5206\\u7c7bID\",\"name\":\"hot_articles_category_id\",\"value\":\"1\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='文章页模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'default'  AND `file` = 'portal/article' [ RunTime:0.078480s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'portal/contact' LIMIT 1 [ RunTime:0.078248s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='portal/Page/index',`file`='portal/contact',`name`='联系我们页',`more`='{\"vars\":{\"baidu_map_info_window_text\":{\"title\":\"\\u767e\\u5ea6\\u5730\\u56fe\\u6807\\u6ce8\\u6587\\u5b57\",\"name\":\"baidu_map_info_window_text\",\"value\":\"ThinkIMF<br\\/><span class=\'\'>\\u5730\\u5740\\uff1a\\u4e0a\\u6d77\\u5e02\\u5f90\\u6c47\\u533a\\u659c\\u571f\\u8def2601\\u53f7<\\/span>\",\"type\":\"text\",\"tip\":\"\\u767e\\u5ea6\\u5730\\u56fe\\u6807\\u6ce8\\u6587\\u5b57,\\u652f\\u6301\\u7b80\\u5355html\\u4ee3\\u7801\",\"rule\":[]},\"company_location\":{\"title\":\"\\u516c\\u53f8\\u5750\\u6807\",\"value\":\"\",\"type\":\"location\",\"tip\":\"\",\"rule\":{\"require\":true}},\"address_cn\":{\"title\":\"\\u516c\\u53f8\\u5730\\u5740\",\"value\":\"\\u4e0a\\u6d77\\u5e02\\u5f90\\u6c47\\u533a\\u659c\\u571f\\u8def0001\\u53f7\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"address_en\":{\"title\":\"\\u516c\\u53f8\\u5730\\u5740\\uff08\\u82f1\\u6587\\uff09\",\"value\":\"NO.0001 Xie Tu Road, Shanghai China\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"email\":{\"title\":\"\\u516c\\u53f8\\u90ae\\u7bb1\",\"value\":\"catman@thinkcmf.com\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"phone_cn\":{\"title\":\"\\u516c\\u53f8\\u7535\\u8bdd\",\"value\":\"021 1000 0001\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"phone_en\":{\"title\":\"\\u516c\\u53f8\\u7535\\u8bdd\\uff08\\u82f1\\u6587\\uff09\",\"value\":\"+8621 1000 0001\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"qq\":{\"title\":\"\\u8054\\u7cfbQQ\",\"value\":\"478519726\",\"type\":\"text\",\"tip\":\"\\u591a\\u4e2a QQ\\u4ee5\\u82f1\\u6587\\u9017\\u53f7\\u9694\\u5f00\",\"rule\":{\"require\":true}}}}',`config_more`='{\"vars\":{\"baidu_map_info_window_text\":{\"title\":\"\\u767e\\u5ea6\\u5730\\u56fe\\u6807\\u6ce8\\u6587\\u5b57\",\"name\":\"baidu_map_info_window_text\",\"value\":\"ThinkIMF<br\\/><span class=\'\'>\\u5730\\u5740\\uff1a\\u4e0a\\u6d77\\u5e02\\u5f90\\u6c47\\u533a\\u659c\\u571f\\u8def2601\\u53f7<\\/span>\",\"type\":\"text\",\"tip\":\"\\u767e\\u5ea6\\u5730\\u56fe\\u6807\\u6ce8\\u6587\\u5b57,\\u652f\\u6301\\u7b80\\u5355html\\u4ee3\\u7801\",\"rule\":[]},\"company_location\":{\"title\":\"\\u516c\\u53f8\\u5750\\u6807\",\"value\":\"\",\"type\":\"location\",\"tip\":\"\",\"rule\":{\"require\":true}},\"address_cn\":{\"title\":\"\\u516c\\u53f8\\u5730\\u5740\",\"value\":\"\\u4e0a\\u6d77\\u5e02\\u5f90\\u6c47\\u533a\\u659c\\u571f\\u8def0001\\u53f7\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"address_en\":{\"title\":\"\\u516c\\u53f8\\u5730\\u5740\\uff08\\u82f1\\u6587\\uff09\",\"value\":\"NO.0001 Xie Tu Road, Shanghai China\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"email\":{\"title\":\"\\u516c\\u53f8\\u90ae\\u7bb1\",\"value\":\"catman@thinkcmf.com\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"phone_cn\":{\"title\":\"\\u516c\\u53f8\\u7535\\u8bdd\",\"value\":\"021 1000 0001\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"phone_en\":{\"title\":\"\\u516c\\u53f8\\u7535\\u8bdd\\uff08\\u82f1\\u6587\\uff09\",\"value\":\"+8621 1000 0001\",\"type\":\"text\",\"tip\":\"\",\"rule\":{\"require\":true}},\"qq\":{\"title\":\"\\u8054\\u7cfbQQ\",\"value\":\"478519726\",\"type\":\"text\",\"tip\":\"\\u591a\\u4e2a QQ\\u4ee5\\u82f1\\u6587\\u9017\\u53f7\\u9694\\u5f00\",\"rule\":{\"require\":true}}}}',`description`='联系我们页模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'default'  AND `file` = 'portal/contact' [ RunTime:0.077704s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'portal/index' LIMIT 1 [ RunTime:0.076991s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='portal/Index/index',`file`='portal/index',`name`='首页',`more`='{\"vars\":{\"top_slide\":{\"title\":\"\\u9876\\u90e8\\u5e7b\\u706f\\u7247\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"admin\\/Slide\\/index\",\"multi\":false},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u9876\\u90e8\\u5e7b\\u706f\\u7247\",\"tip\":\"\",\"rule\":{\"require\":true}}},\"widgets\":{\"features\":{\"title\":\"\\u5feb\\u901f\\u4e86\\u89e3ThinkIMF\",\"display\":\"1\",\"vars\":{\"sub_title\":{\"title\":\"\\u526f\\u6807\\u9898\",\"value\":\"Quickly understand the ThinkIMF\",\"type\":\"text\",\"placeholder\":\"\\u8bf7\\u8f93\\u5165\\u526f\\u6807\\u9898\",\"tip\":\"\",\"rule\":{\"require\":true}},\"features\":{\"title\":\"\\u7279\\u6027\\u4ecb\\u7ecd\",\"value\":[{\"title\":\"MVC\\u5206\\u5c42\\u6a21\\u5f0f\",\"icon\":\"bars\",\"content\":\"\\u4f7f\\u7528MVC\\u5e94\\u7528\\u7a0b\\u5e8f\\u88ab\\u5206\\u6210\\u4e09\\u4e2a\\u6838\\u5fc3\\u90e8\\u4ef6\\uff1a\\u6a21\\u578b\\uff08M\\uff09\\u3001\\u89c6\\u56fe\\uff08V\\uff09\\u3001\\u63a7\\u5236\\u5668\\uff08C\\uff09\\uff0c\\u4ed6\\u4e0d\\u662f\\u4e00\\u4e2a\\u65b0\\u7684\\u6982\\u5ff5\\uff0c\\u53ea\\u662fThinkIMF\\u5c06\\u5176\\u53d1\\u6325\\u5230\\u4e86\\u6781\\u81f4\\u3002\"},{\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"group\",\"content\":\"ThinkIMF\\u5185\\u7f6e\\u4e86\\u7075\\u6d3b\\u7684\\u7528\\u6237\\u7ba1\\u7406\\u65b9\\u5f0f\\uff0c\\u5e76\\u53ef\\u76f4\\u63a5\\u4e0e\\u7b2c\\u4e09\\u65b9\\u7ad9\\u70b9\\u8fdb\\u884c\\u4e92\\u8054\\u4e92\\u901a\\uff0c\\u5982\\u679c\\u4f60\\u613f\\u610f\\u751a\\u81f3\\u53ef\\u4ee5\\u5bf9\\u5355\\u4e2a\\u7528\\u6237\\u6216\\u7fa4\\u4f53\\u7528\\u6237\\u7684\\u884c\\u4e3a\\u8fdb\\u884c\\u8bb0\\u5f55\\u53ca\\u5206\\u4eab\\uff0c\\u4e3a\\u60a8\\u7684\\u8fd0\\u8425\\u51b3\\u7b56\\u63d0\\u4f9b\\u6709\\u6548\\u53c2\\u8003\\u6570\\u636e\\u3002\"},{\"title\":\"\\u4e91\\u7aef\\u90e8\\u7f72\",\"icon\":\"cloud\",\"content\":\"\\u901a\\u8fc7\\u9a71\\u52a8\\u7684\\u65b9\\u5f0f\\u53ef\\u4ee5\\u8f7b\\u677e\\u652f\\u6301\\u4e91\\u5e73\\u53f0\\u7684\\u90e8\\u7f72\\uff0c\\u8ba9\\u4f60\\u7684\\u7f51\\u7ad9\\u65e0\\u7f1d\\u8fc1\\u79fb\\uff0c\\u5185\\u7f6e\\u5df2\\u7ecf\\u652f\\u6301SAE\\u3001BAE\\uff0c\\u6b63\\u5f0f\\u7248\\u5c06\\u5bf9\\u4e91\\u7aef\\u90e8\\u7f72\\u8fdb\\u884c\\u8fdb\\u4e00\\u6b65\\u4f18\\u5316\\u3002\"},{\"title\":\"\\u5b89\\u5168\\u7b56\\u7565\",\"icon\":\"heart\",\"content\":\"\\u63d0\\u4f9b\\u7684\\u7a33\\u5065\\u7684\\u5b89\\u5168\\u7b56\\u7565\\uff0c\\u5305\\u62ec\\u5907\\u4efd\\u6062\\u590d\\uff0c\\u5bb9\\u9519\\uff0c\\u9632\\u6cbb\\u6076\\u610f\\u653b\\u51fb\\u767b\\u9646\\uff0c\\u7f51\\u9875\\u9632\\u7be1\\u6539\\u7b49\\u591a\\u9879\\u5b89\\u5168\\u7ba1\\u7406\\u529f\\u80fd\\uff0c\\u4fdd\\u8bc1\\u7cfb\\u7edf\\u5b89\\u5168\\uff0c\\u53ef\\u9760\\uff0c\\u7a33\\u5b9a\\u7684\\u8fd0\\u884c\\u3002\"},{\"title\":\"\\u5e94\\u7528\\u6a21\\u5757\\u5316\",\"icon\":\"cubes\",\"content\":\"\\u63d0\\u51fa\\u5168\\u65b0\\u7684\\u5e94\\u7528\\u6a21\\u5f0f\\u8fdb\\u884c\\u6269\\u5c55\\uff0c\\u4e0d\\u7ba1\\u662f\\u4f60\\u5f00\\u53d1\\u4e00\\u4e2a\\u5c0f\\u529f\\u80fd\\u8fd8\\u662f\\u4e00\\u4e2a\\u5168\\u65b0\\u7684\\u7ad9\\u70b9\\uff0c\\u5728ThinkIMF\\u4e2d\\u4f60\\u53ea\\u662f\\u589e\\u52a0\\u4e86\\u4e00\\u4e2aAPP\\uff0c\\u6bcf\\u4e2a\\u72ec\\u7acb\\u8fd0\\u884c\\u4e92\\u4e0d\\u5f71\\u54cd\\uff0c\\u4fbf\\u4e8e\\u7075\\u6d3b\\u6269\\u5c55\\u548c\\u4e8c\\u6b21\\u5f00\\u53d1\\u3002\"},{\"title\":\"\\u514d\\u8d39\\u5f00\\u6e90\",\"icon\":\"certificate\",\"content\":\"\\u4ee3\\u7801\\u9075\\u5faaApache2\\u5f00\\u6e90\\u534f\\u8bae\\uff0c\\u514d\\u8d39\\u4f7f\\u7528\\uff0c\\u5bf9\\u5546\\u4e1a\\u7528\\u6237\\u4e5f\\u65e0\\u4efb\\u4f55\\u9650\\u5236\\u3002\"}],\"type\":\"array\",\"item\":{\"title\":{\"title\":\"\\u6807\\u9898\",\"value\":\"\",\"type\":\"text\",\"rule\":{\"require\":true}},\"icon\":{\"title\":\"\\u56fe\\u6807\",\"value\":\"\",\"type\":\"text\"},\"content\":{\"title\":\"\\u63cf\\u8ff0\",\"value\":\"\",\"type\":\"textarea\"}},\"tip\":\"\"}}},\"last_news\":{\"title\":\"\\u6700\\u65b0\\u8d44\\u8baf\",\"display\":\"1\",\"vars\":{\"last_news_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}}}}',`config_more`='{\"vars\":{\"top_slide\":{\"title\":\"\\u9876\\u90e8\\u5e7b\\u706f\\u7247\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"admin\\/Slide\\/index\",\"multi\":false},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u9876\\u90e8\\u5e7b\\u706f\\u7247\",\"tip\":\"\",\"rule\":{\"require\":true}}},\"widgets\":{\"features\":{\"title\":\"\\u5feb\\u901f\\u4e86\\u89e3ThinkIMF\",\"display\":\"1\",\"vars\":{\"sub_title\":{\"title\":\"\\u526f\\u6807\\u9898\",\"value\":\"Quickly understand the ThinkIMF\",\"type\":\"text\",\"placeholder\":\"\\u8bf7\\u8f93\\u5165\\u526f\\u6807\\u9898\",\"tip\":\"\",\"rule\":{\"require\":true}},\"features\":{\"title\":\"\\u7279\\u6027\\u4ecb\\u7ecd\",\"value\":[{\"title\":\"MVC\\u5206\\u5c42\\u6a21\\u5f0f\",\"icon\":\"bars\",\"content\":\"\\u4f7f\\u7528MVC\\u5e94\\u7528\\u7a0b\\u5e8f\\u88ab\\u5206\\u6210\\u4e09\\u4e2a\\u6838\\u5fc3\\u90e8\\u4ef6\\uff1a\\u6a21\\u578b\\uff08M\\uff09\\u3001\\u89c6\\u56fe\\uff08V\\uff09\\u3001\\u63a7\\u5236\\u5668\\uff08C\\uff09\\uff0c\\u4ed6\\u4e0d\\u662f\\u4e00\\u4e2a\\u65b0\\u7684\\u6982\\u5ff5\\uff0c\\u53ea\\u662fThinkIMF\\u5c06\\u5176\\u53d1\\u6325\\u5230\\u4e86\\u6781\\u81f4\\u3002\"},{\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"group\",\"content\":\"ThinkIMF\\u5185\\u7f6e\\u4e86\\u7075\\u6d3b\\u7684\\u7528\\u6237\\u7ba1\\u7406\\u65b9\\u5f0f\\uff0c\\u5e76\\u53ef\\u76f4\\u63a5\\u4e0e\\u7b2c\\u4e09\\u65b9\\u7ad9\\u70b9\\u8fdb\\u884c\\u4e92\\u8054\\u4e92\\u901a\\uff0c\\u5982\\u679c\\u4f60\\u613f\\u610f\\u751a\\u81f3\\u53ef\\u4ee5\\u5bf9\\u5355\\u4e2a\\u7528\\u6237\\u6216\\u7fa4\\u4f53\\u7528\\u6237\\u7684\\u884c\\u4e3a\\u8fdb\\u884c\\u8bb0\\u5f55\\u53ca\\u5206\\u4eab\\uff0c\\u4e3a\\u60a8\\u7684\\u8fd0\\u8425\\u51b3\\u7b56\\u63d0\\u4f9b\\u6709\\u6548\\u53c2\\u8003\\u6570\\u636e\\u3002\"},{\"title\":\"\\u4e91\\u7aef\\u90e8\\u7f72\",\"icon\":\"cloud\",\"content\":\"\\u901a\\u8fc7\\u9a71\\u52a8\\u7684\\u65b9\\u5f0f\\u53ef\\u4ee5\\u8f7b\\u677e\\u652f\\u6301\\u4e91\\u5e73\\u53f0\\u7684\\u90e8\\u7f72\\uff0c\\u8ba9\\u4f60\\u7684\\u7f51\\u7ad9\\u65e0\\u7f1d\\u8fc1\\u79fb\\uff0c\\u5185\\u7f6e\\u5df2\\u7ecf\\u652f\\u6301SAE\\u3001BAE\\uff0c\\u6b63\\u5f0f\\u7248\\u5c06\\u5bf9\\u4e91\\u7aef\\u90e8\\u7f72\\u8fdb\\u884c\\u8fdb\\u4e00\\u6b65\\u4f18\\u5316\\u3002\"},{\"title\":\"\\u5b89\\u5168\\u7b56\\u7565\",\"icon\":\"heart\",\"content\":\"\\u63d0\\u4f9b\\u7684\\u7a33\\u5065\\u7684\\u5b89\\u5168\\u7b56\\u7565\\uff0c\\u5305\\u62ec\\u5907\\u4efd\\u6062\\u590d\\uff0c\\u5bb9\\u9519\\uff0c\\u9632\\u6cbb\\u6076\\u610f\\u653b\\u51fb\\u767b\\u9646\\uff0c\\u7f51\\u9875\\u9632\\u7be1\\u6539\\u7b49\\u591a\\u9879\\u5b89\\u5168\\u7ba1\\u7406\\u529f\\u80fd\\uff0c\\u4fdd\\u8bc1\\u7cfb\\u7edf\\u5b89\\u5168\\uff0c\\u53ef\\u9760\\uff0c\\u7a33\\u5b9a\\u7684\\u8fd0\\u884c\\u3002\"},{\"title\":\"\\u5e94\\u7528\\u6a21\\u5757\\u5316\",\"icon\":\"cubes\",\"content\":\"\\u63d0\\u51fa\\u5168\\u65b0\\u7684\\u5e94\\u7528\\u6a21\\u5f0f\\u8fdb\\u884c\\u6269\\u5c55\\uff0c\\u4e0d\\u7ba1\\u662f\\u4f60\\u5f00\\u53d1\\u4e00\\u4e2a\\u5c0f\\u529f\\u80fd\\u8fd8\\u662f\\u4e00\\u4e2a\\u5168\\u65b0\\u7684\\u7ad9\\u70b9\\uff0c\\u5728ThinkIMF\\u4e2d\\u4f60\\u53ea\\u662f\\u589e\\u52a0\\u4e86\\u4e00\\u4e2aAPP\\uff0c\\u6bcf\\u4e2a\\u72ec\\u7acb\\u8fd0\\u884c\\u4e92\\u4e0d\\u5f71\\u54cd\\uff0c\\u4fbf\\u4e8e\\u7075\\u6d3b\\u6269\\u5c55\\u548c\\u4e8c\\u6b21\\u5f00\\u53d1\\u3002\"},{\"title\":\"\\u514d\\u8d39\\u5f00\\u6e90\",\"icon\":\"certificate\",\"content\":\"\\u4ee3\\u7801\\u9075\\u5faaApache2\\u5f00\\u6e90\\u534f\\u8bae\\uff0c\\u514d\\u8d39\\u4f7f\\u7528\\uff0c\\u5bf9\\u5546\\u4e1a\\u7528\\u6237\\u4e5f\\u65e0\\u4efb\\u4f55\\u9650\\u5236\\u3002\"}],\"type\":\"array\",\"item\":{\"title\":{\"title\":\"\\u6807\\u9898\",\"value\":\"\",\"type\":\"text\",\"rule\":{\"require\":true}},\"icon\":{\"title\":\"\\u56fe\\u6807\",\"value\":\"\",\"type\":\"text\"},\"content\":{\"title\":\"\\u63cf\\u8ff0\",\"value\":\"\",\"type\":\"textarea\"}},\"tip\":\"\"}}},\"last_news\":{\"title\":\"\\u6700\\u65b0\\u8d44\\u8baf\",\"display\":\"1\",\"vars\":{\"last_news_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}}}}',`description`='首页模板文件',`is_public`=0,`list_order`=5  WHERE  `theme` = 'default'  AND `file` = 'portal/index' [ RunTime:0.078474s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'portal/list' LIMIT 1 [ RunTime:0.077287s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='portal/List/index',`file`='portal/list',`name`='文章列表页',`more`='{\"vars\":[],\"widgets\":{\"hottest_articles\":{\"title\":\"\\u70ed\\u95e8\\u6587\\u7ae0\",\"display\":\"1\",\"vars\":{\"hottest_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}},\"last_articles\":{\"title\":\"\\u6700\\u65b0\\u53d1\\u5e03\",\"display\":\"1\",\"vars\":{\"last_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}}}}',`config_more`='{\"vars\":[],\"widgets\":{\"hottest_articles\":{\"title\":\"\\u70ed\\u95e8\\u6587\\u7ae0\",\"display\":\"1\",\"vars\":{\"hottest_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}},\"last_articles\":{\"title\":\"\\u6700\\u65b0\\u53d1\\u5e03\",\"display\":\"1\",\"vars\":{\"last_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}}}}',`description`='文章列表模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'default'  AND `file` = 'portal/list' [ RunTime:0.078464s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'portal/page' LIMIT 1 [ RunTime:0.076271s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='portal/Page/index',`file`='portal/page',`name`='单页面',`more`='{\"widgets\":{\"hottest_articles\":{\"title\":\"\\u70ed\\u95e8\\u6587\\u7ae0\",\"display\":\"1\",\"vars\":{\"hottest_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}},\"last_articles\":{\"title\":\"\\u6700\\u65b0\\u53d1\\u5e03\",\"display\":\"1\",\"vars\":{\"last_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}}}}',`config_more`='{\"widgets\":{\"hottest_articles\":{\"title\":\"\\u70ed\\u95e8\\u6587\\u7ae0\",\"display\":\"1\",\"vars\":{\"hottest_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}},\"last_articles\":{\"title\":\"\\u6700\\u65b0\\u53d1\\u5e03\",\"display\":\"1\",\"vars\":{\"last_articles_category_id\":{\"title\":\"\\u6587\\u7ae0\\u5206\\u7c7bID\",\"value\":\"\",\"type\":\"text\",\"dataSource\":{\"api\":\"portal\\/category\\/index\",\"multi\":true},\"placeholder\":\"\\u8bf7\\u9009\\u62e9\\u5206\\u7c7b\",\"tip\":\"\",\"rule\":{\"require\":true}}}}}}',`description`='单页面模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'default'  AND `file` = 'portal/page' [ RunTime:0.076723s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'portal/search' LIMIT 1 [ RunTime:0.078823s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='portal/search/index',`file`='portal/search',`name`='搜索页面',`more`='{\"vars\":{\"varName1\":{\"title\":\"\\u70ed\\u95e8\\u641c\\u7d22\",\"value\":\"1\",\"type\":\"text\",\"tip\":\"\\u8fd9\\u662f\\u4e00\\u4e2atext\",\"rule\":{\"require\":true}}}}',`config_more`='{\"vars\":{\"varName1\":{\"title\":\"\\u70ed\\u95e8\\u641c\\u7d22\",\"value\":\"1\",\"type\":\"text\",\"tip\":\"\\u8fd9\\u662f\\u4e00\\u4e2atext\",\"rule\":{\"require\":true}}}}',`description`='搜索模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'default'  AND `file` = 'portal/search' [ RunTime:0.077247s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'public/config' LIMIT 1 [ RunTime:0.079181s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='public/Config',`file`='public/config',`name`='模板全局配置',`more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`config_more`='{\"vars\":{\"enable_mobile\":{\"title\":\"\\u624b\\u673a\\u6ce8\\u518c\",\"value\":1,\"type\":\"select\",\"options\":{\"1\":\"\\u5f00\\u542f\",\"0\":\"\\u5173\\u95ed\"},\"tip\":\"\"}}}',`description`='模板全局配置文件',`is_public`=1,`list_order`=0  WHERE  `theme` = 'default'  AND `file` = 'public/config' [ RunTime:0.078441s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default'  AND `file` = 'public/nav' LIMIT 1 [ RunTime:0.077791s ]
+[ sql ] [ SQL ] UPDATE `ud_theme_file`  SET `theme`='default',`action`='public/Nav',`file`='public/nav',`name`='导航条',`more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkIMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`config_more`='{\"vars\":{\"company_name\":{\"title\":\"\\u516c\\u53f8\\u540d\\u79f0\",\"name\":\"company_name\",\"value\":\"ThinkIMF\",\"type\":\"text\",\"tip\":\"\",\"rule\":[]}}}',`description`='导航条模板文件',`is_public`=1,`list_order`=1  WHERE  `theme` = 'default'  AND `file` = 'public/nav' [ RunTime:0.076946s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_theme_file` WHERE  `theme` = 'default' [ RunTime:0.117082s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_theme` [ RunTime:0.078624s ]
+[ sql ] [ SQL ] UPDATE `ud_theme`  SET `name`='simpleboot3',`version`='1.0.2',`demo_url`='http://demo.thinkcmf.com',`author`='ThinkIMF',`lang`='zh-cn',`author_url`='https://www.thinkimf.com',`keywords`='ThinkIMF模板',`description`='ThinkIMF默认模板'  WHERE  `theme` = 'default' [ RunTime:0.076101s ]
+[ sql ] [ SQL ] SELECT `more` FROM `ud_theme_file` WHERE  `theme` = 'default'  AND (  `is_public` = 1 OR `file` = 'portal/index' ) [ RunTime:0.077907s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_nav` [ RunTime:0.077674s ]
+[ sql ] [ SQL ] SELECT `id` FROM `ud_nav` WHERE  `is_main` = 1 LIMIT 1 [ RunTime:0.075834s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_nav_menu` [ RunTime:0.075789s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_nav_menu` WHERE  `nav_id` = 1  AND `status` = 1 ORDER BY list_order ASC [ RunTime:0.076765s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_slide` [ RunTime:0.076907s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ud_slide` WHERE  `id` = 1  AND `status` = 1  AND `delete_time` = 0 LIMIT 1 [ RunTime:0.077093s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_slide_item` [ RunTime:0.078152s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_slide_item` WHERE  `status` = 1  AND `slide_id` = 1 ORDER BY list_order ASC [ RunTime:0.077327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_portal_post` [ RunTime:0.076056s ]
+[ sql ] [ SQL ] SELECT `post`.*,`user`.`user_login`,`user`.`user_nickname`,`user`.`user_email`,`category_post`.`category_id` FROM `ud_portal_post` `post` INNER JOIN `ud_user` `user` ON `post`.`user_id`=`user`.`id` INNER JOIN `ud_portal_category_post` `category_post` ON `post`.`id`=`category_post`.`post_id` WHERE  ( `post`.`published_time` >  '0' AND `post`.`published_time` < 1518142334 )  AND `post`.`post_status` = 1  AND `post`.`post_type` = 1  AND `post`.`delete_time` = 0  AND `category_post`.`category_id` = '1' ORDER BY post.published_time DESC LIMIT 4 [ RunTime:0.077947s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_link` [ RunTime:0.076262s ]
+[ sql ] [ SQL ] SELECT * FROM `ud_link` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.077148s ]
+---------------------------------------------------------------
+[ 2018-02-09T10:12:15+08:00 ] 127.0.0.1 127.0.0.1 POST /user/index/islogin.html
+[ info ] 127.0.0.1:5070/user/index/islogin.html [运行时间：0.464895s][吞吐率：2.15req/s] [内存消耗：2,671.44kb] [文件加载：67]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run imf\behavior\InitHookBehavior @app_init [ RunTime:0.278130s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\framework\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'index',
+    2 => 'islogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; rmbUser=true; userName=admin; passWord=123456; cta_auth=f5a4-P-Kup8YwDZ67G92-S-kJtDbYFuTdIeXBw5-P-L-S-1UXWl5T5pp9xZb93y46W3nODDbvc29U4aE7a7WUzHO5YyAQ12c; cta_username=admin; cta_cart=0; Hm_lvt_bfe24d0146fa6543bcf338d5331b13b7=1517536036,1517793764,1517882112,1518058932; Hm_lvt_df1786743b64c572d87dc7f3b081d8f5=1517793757,1517882115,1517966320,1518139877; Hm_lpvt_df1786743b64c572d87dc7f3b081d8f5=1518139877; PHPSESSID=qkuv0b0laqf721d4k8k8d2agl3; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1:5070/',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1:5070',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+  'host' => '127.0.0.1:5070',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../framework/imf/lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\LangBehavior @app_begin [ RunTime:0.001073s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/user\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\HomeLangBehavior @home_init [ RunTime:0.000868s ]
+[ info ] [ RUN ] app\user\controller\IndexController->isLogin[ D:\phpStudy\WWW\cmf\app\user\controller\IndexController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.114893s ] mysql:dbname=imf;host=120.78.150.141;port=3306;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_hook_plugin` [ RunTime:0.076135s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `ud_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.073471s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_option` [ RunTime:0.073037s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.073078s ]
+---------------------------------------------------------------
+[ 2018-02-09T10:12:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/
+[ info ] 127.0.0.1:5070/admin/ [运行时间：0.500516s][吞吐率：2.00req/s] [内存消耗：2,682.17kb] [文件加载：66]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run imf\behavior\InitHookBehavior @app_init [ RunTime:0.256774s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\framework\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; rmbUser=true; userName=admin; passWord=123456; cta_auth=f5a4-P-Kup8YwDZ67G92-S-kJtDbYFuTdIeXBw5-P-L-S-1UXWl5T5pp9xZb93y46W3nODDbvc29U4aE7a7WUzHO5YyAQ12c; cta_username=admin; cta_cart=0; Hm_lvt_bfe24d0146fa6543bcf338d5331b13b7=1517536036,1517793764,1517882112,1518058932; Hm_lvt_df1786743b64c572d87dc7f3b081d8f5=1517793757,1517882115,1517966320,1518139877; Hm_lpvt_df1786743b64c572d87dc7f3b081d8f5=1518139877; PHPSESSID=qkuv0b0laqf721d4k8k8d2agl3; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'dnt' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '127.0.0.1:5070',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../framework/imf/lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\LangBehavior @app_begin [ RunTime:0.001048s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\AdminLangBehavior @admin_init [ RunTime:0.002032s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.106080s ] mysql:dbname=imf;host=120.78.150.141;port=3306;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_hook_plugin` [ RunTime:0.073335s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `ud_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.070637s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_option` [ RunTime:0.071200s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.071404s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.071924s ]
+---------------------------------------------------------------
+[ 2018-02-09T10:12:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/public/login.html
+[ info ] 127.0.0.1:5070/admin/public/login.html [运行时间：0.533163s][吞吐率：1.88req/s] [内存消耗：2,959.04kb] [文件加载：70]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run imf\behavior\InitHookBehavior @app_init [ RunTime:0.238265s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\framework\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; rmbUser=true; userName=admin; passWord=123456; cta_auth=f5a4-P-Kup8YwDZ67G92-S-kJtDbYFuTdIeXBw5-P-L-S-1UXWl5T5pp9xZb93y46W3nODDbvc29U4aE7a7WUzHO5YyAQ12c; cta_username=admin; cta_cart=0; Hm_lvt_bfe24d0146fa6543bcf338d5331b13b7=1517536036,1517793764,1517882112,1518058932; Hm_lvt_df1786743b64c572d87dc7f3b081d8f5=1517793757,1517882115,1517966320,1518139877; Hm_lpvt_df1786743b64c572d87dc7f3b081d8f5=1518139877; PHPSESSID=qkuv0b0laqf721d4k8k8d2agl3; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'dnt' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '127.0.0.1:5070',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../framework/imf/lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\LangBehavior @app_begin [ RunTime:0.001075s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\PublicController->login[ D:\phpStudy\WWW\cmf\app\admin\controller\PublicController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] themes/admin_tpl/admin\\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098787s ] mysql:dbname=imf;host=120.78.150.141;port=3306;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_hook_plugin` [ RunTime:0.068522s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `ud_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.065875s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_option` [ RunTime:0.066765s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.066930s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.066613s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ud_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.066020s ]
+---------------------------------------------------------------
+[ 2018-02-09T10:12:20+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha/new.html?height=32&width=150&font_size=18
+[ info ] 127.0.0.1:5070/captcha/new.html?height=32&width=150&font_size=18 [运行时间：0.273069s][吞吐率：3.66req/s] [内存消耗：2,338.56kb] [文件加载：52]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run imf\behavior\InitHookBehavior @app_init [ RunTime:0.250874s ]
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\framework\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\imf\\controller\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; rmbUser=true; userName=admin; passWord=123456; cta_auth=f5a4-P-Kup8YwDZ67G92-S-kJtDbYFuTdIeXBw5-P-L-S-1UXWl5T5pp9xZb93y46W3nODDbvc29U4aE7a7WUzHO5YyAQ12c; cta_username=admin; cta_cart=0; Hm_lvt_bfe24d0146fa6543bcf338d5331b13b7=1517536036,1517793764,1517882112,1518058932; Hm_lvt_df1786743b64c572d87dc7f3b081d8f5=1517793757,1517882115,1517966320,1518139877; Hm_lpvt_df1786743b64c572d87dc7f3b081d8f5=1518139877; PHPSESSID=qkuv0b0laqf721d4k8k8d2agl3; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'referer' => 'http://127.0.0.1:5070/admin/public/login.html',
+  'dnt' => '1',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '127.0.0.1:5070',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'height' => '32',
+  'width' => '150',
+  'font_size' => '18',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../framework/imf/lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] D:\phpStudy\WWW\cmf\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run imf\behavior\LangBehavior @app_begin [ RunTime:0.001075s ]
+[ info ] [ RUN ] imf\controller\CaptchaController->index[ D:\phpStudy\WWW\cmf\framework\imf\controller\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.104212s ] mysql:dbname=imf;host=120.78.150.141;port=3306;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ud_hook_plugin` [ RunTime:0.070693s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `ud_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.068131s ]

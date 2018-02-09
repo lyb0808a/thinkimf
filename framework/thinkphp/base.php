@@ -15,7 +15,7 @@
  * email:unnnnn@foxmail.com
  */
 
-define('THINK_VERSION', '5.0.11');
+define('IMF_CORE_VERSION', 'X.0.01');
 define('THINK_START_TIME', microtime(true));
 define('THINK_START_MEM', memory_get_usage());
 define('EXT', '.php');

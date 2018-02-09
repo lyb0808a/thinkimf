@@ -128,7 +128,7 @@ class IndexController extends Controller
         }
 
         $folders    = [
-            realpath(CMF_ROOT . 'data') . DS,
+            realpath(IMF_ROOT . 'data') . DS,
             realpath('./upload') . DS,
         ];
         $newFolders = [];
@@ -320,7 +320,7 @@ class IndexController extends Controller
     public function step5()
     {
         if (session("install.step") == 4) {
-            @touch(CMF_ROOT . 'data/ok.lock');
+            @touch(IMF_ROOT . 'data/ok.lock');
             return $this->fetch(":step5");
         } else {
             $this->error("非法安装！");

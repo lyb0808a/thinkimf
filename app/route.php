@@ -15,8 +15,8 @@
  * email:unnnnn@foxmail.com
  */
 
-if (file_exists(CMF_ROOT . "data/conf/route.php")) {
-    $runtimeRoutes = include CMF_ROOT . "data/conf/route.php";
+if (file_exists(IMF_ROOT . "data/conf/route.php")) {
+    $runtimeRoutes = include IMF_ROOT . "data/conf/route.php";
 } else {
     $runtimeRoutes = [];
 }

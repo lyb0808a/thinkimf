@@ -89,7 +89,7 @@ class RouteModel extends Model
 
         }
         cache("routes", $cacheRoutes);
-        $route_dir = CMF_ROOT . "data/conf/";
+        $route_dir = IMF_ROOT . "data/conf/";
         if (!file_exists($route_dir)) {
             mkdir($route_dir);
         }
