@@ -19,13 +19,13 @@
 // 调试模式开关
 define("APP_DEBUG", true);
 
-// 定义CMF根目录,可更改此目录
+// 定义IMF根目录,可更改此目录
 define('CMF_ROOT', __DIR__ . '/../');
 
 // 定义应用目录
 define('APP_PATH', CMF_ROOT . 'app/');
 
-// 定义CMF核心包目录
+// 定义IMF核心包目录
 define('CMF_PATH', CMF_ROOT . 'framework/imf/');
 
 // 定义插件目录
@@ -38,7 +38,7 @@ define('VENDOR_PATH', CMF_ROOT . 'framework/vendor/');
 // 定义应用的运行时目录
 define('RUNTIME_PATH', CMF_ROOT . 'data/runtime/');
 
-// 定义CMF 版本号
+// 定义IMF 版本号
 define('THINKCMF_VERSION', '1.6.201801');
 
 // 加载框架基础文件

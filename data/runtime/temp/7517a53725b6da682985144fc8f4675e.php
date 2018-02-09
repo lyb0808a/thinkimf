@@ -98,8 +98,8 @@ function _sp_helloworld3(){
             <ul id="main-menu" class="nav navbar-nav">
                 <?php
 
-function __parse_navigation73715d1e5e4a3dddf98f09516b765a27($menus,$level=1){
-$_parse_navigation_func_name = '__parse_navigation73715d1e5e4a3dddf98f09516b765a27';
+function __parse_navigation3f552be91fc00c2eea1a3b4138e3273f($menus,$level=1){
+$_parse_navigation_func_name = '__parse_navigation3f552be91fc00c2eea1a3b4138e3273f';
 if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof \think\Paginator): if( count($menus)==0 ) : echo "" ;else: foreach($menus as $key=>$menu): if(empty($menu['children'])): ?>
     <li class="menu-item menu-item-level-<?php echo $level; ?>">
     
@@ -128,9 +128,9 @@ if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof 
     $navMenuModel = new \app\admin\model\NavMenuModel();
     $menus = $navMenuModel->navMenusTreeArray('',0);
 if(''==''): ?>
-    <?php echo __parse_navigation73715d1e5e4a3dddf98f09516b765a27($menus); else: ?>
+    <?php echo __parse_navigation3f552be91fc00c2eea1a3b4138e3273f($menus); else: ?>
     < id="main-navigation" class="nav navbar-nav navbar-nav-custom">
-        <?php echo __parse_navigation73715d1e5e4a3dddf98f09516b765a27($menus); ?>
+        <?php echo __parse_navigation3f552be91fc00c2eea1a3b4138e3273f($menus); ?>
     </>
 <?php endif; ?>
 

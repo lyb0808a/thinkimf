@@ -38,9 +38,6 @@ class IndexController extends Controller
 
     public function step2()
     {
-//        if (file_exists_case('data/conf/config.php')) {
-//            @unlink('data/conf/config.php');
-//        }
         $data               = [];
         $data['phpversion'] = @phpversion();
         $data['os']         = PHP_OS;
@@ -52,7 +49,6 @@ class IndexController extends Controller
 //        $allow_reference    = (ini_get('allow_call_time_pass_reference') ? '<font color=green>[√]On</font>' : '<font color=red>[×]Off</font>');
 //        $allow_url_fopen    = (ini_get('allow_url_fopen') ? '<font color=green>[√]On</font>' : '<font color=red>[×]Off</font>');
 //        $safe_mode          = (ini_get('safe_mode') ? '<font color=red>[×]On</font>' : '<font color=green>[√]Off</font>');
-
         $err = 0;
         if (empty($tmp['GD Version'])) {
             $gd = '<font color=red>[×]Off</font>';
@@ -324,7 +320,7 @@ class IndexController extends Controller
     public function step5()
     {
         if (session("install.step") == 4) {
-            @touch(CMF_ROOT . 'data/install.lock');
+            @touch(CMF_ROOT . 'data/ok.lock');
             return $this->fetch(":step5");
         } else {
             $this->error("非法安装！");
